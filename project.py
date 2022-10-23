@@ -37,9 +37,22 @@ def inRange(board):
   
   return True
 
+def checkRow(board, row):
+     check = [ 0 for k in range(10)]
+     for i in range(9):
+            num = board[row][i]
+            if(i==0):
+                  check[num] = 1
+            else :
+                  if(check[num] == 1):
+                        return False
+                  else:
+                        check[num]=1
+     return True
+
 if __name__ == "__main__":
       
-      board = [ [ 7, 10, 2, 1, 5, 4, 3, 8, 6 ],
+      board = [ [ 7, 9, 2, 1, 5, 4, 3, 8, 6 ],
             [ 6, 4, 3, 8, 2, 7, 1, 5, 9 ],
             [ 8, 5, 1, 3, 9, 6, 7, 2, 4 ],
             [ 2, 6, 5, 9, 7, 3, 8, 4, 1 ],
@@ -54,10 +67,28 @@ if __name__ == "__main__":
             if event.type == pygame.QUIT:
                   run = False
           draw_grid(board)
-
+          flag = 0;
           if not inRange(board):
                 txt = font1.render("INVALID NUMBER", 1, (255, 0, 0))
                 screen.blit(txt, (200, 550))
+          else:
+                  for i in range(9):
+                        flag = 0
+                        if not checkRow(board,i):
+                              txt = font1.render("row not right at :", 1, (255, 0, 0))
+                              a = font1.render(str(i), 1, (255, 0, 0))
+                              screen.blit(txt, (200, 550))
+                              screen.blit(a, (350, 550))
+                              flag = 1
+                              break
+                  if(flag):
+                        #break
+                  else :
+                        txt = font1.render("seems cool :", 1, (255, 0, 0))
+                        screen.blit(txt, (200, 550))
+                        #else: 
+                              #txt = font1.render("VALID", 1, (255, 0, 0))
+                              #screen.blit(txt, (200, 550))
           
           pygame.display.update()
 #def checkRow(board, row):
