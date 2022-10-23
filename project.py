@@ -48,7 +48,6 @@ def checkRow(board, row):
                         return False
                   else:
                         check[num]=1
-     return True
 
 if __name__ == "__main__":
       
