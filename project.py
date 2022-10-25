@@ -49,6 +49,18 @@ def checkRow(board, row):
                   else:
                         check[num]=1
 
+def checkCol(board, col):
+     check = [ 0 for k in range(10)]
+     for i in range(9):
+            num = board[i][col]
+            if(i==0):
+                  check[num] = 1
+            else :
+                  if(check[num] == 1):
+                        return False
+                  else:
+                        check[num]=1
+     return True               
 if __name__ == "__main__":
       
       board = [ [ 7, 9, 2, 1, 5, 4, 3, 8, 6 ],
@@ -74,33 +86,36 @@ if __name__ == "__main__":
                   for i in range(9):
                         flag = 0
                         if not checkRow(board,i):
-                              txt = font1.render("row not right at :", 1, (255, 0, 0))
+                              txt = font1.render("Incorrect input for row at :", 1, (255, 0, 0))
                               a = font1.render(str(i), 1, (255, 0, 0))
                               screen.blit(txt, (200, 550))
-                              screen.blit(a, (350, 550))
+                              screen.blit(a, (410, 550))
                               flag = 1
                               break
+                        if not checkCol(board,i):
+                              txt = font1.render("Incorrect input for col at :", 1, (255, 0, 0))
+                              a = font1.render(str(i), 1, (255, 0, 0))
+                              screen.blit(txt, (200, 550))
+                              screen.blit(a, (410, 550))
+                              flag = 1
+                              break
+                        if not checkGrid
                   if(flag):
+                        print("help")
                         #break
                   else :
-                        txt = font1.render("seems cool :", 1, (255, 0, 0))
+                        txt = font1.render("VALID", 1, (255, 0, 0))
                         screen.blit(txt, (200, 550))
                         #else: 
                               #txt = font1.render("VALID", 1, (255, 0, 0))
                               #screen.blit(txt, (200, 550))
           
           pygame.display.update()
-#def checkRow(board, row):
 
-#def checkCol(board, col):
 
 #def checkGrid()
 """
-
-
 #def isValidSudoku(board):
-
-
 if __name__ == '__main__':
    
   
