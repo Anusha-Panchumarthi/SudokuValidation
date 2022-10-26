@@ -7,9 +7,9 @@ This project consists of designing a multithreaded application written in Python
 a Sudoku puzzle is valid.
 The strategy used for multithreading in this application is as follows:- 
 
-• Nine threads to check that each column contains the digits 1 through 9
-• Nine threads to check that each row contains the digits 1 through 9
-• Nine threads to check that each of the 3 × 3 subgrids contains the digits 1
+* Nine threads to check that each column contains the digits 1 through 9
+* Nine threads to check that each row contains the digits 1 through 9
+* Nine threads to check that each of the 3 × 3 subgrids contains the digits 1
 through 9
 
 This would result in a total of 27 separate threads for validating a Sudoku puzzle solution.
