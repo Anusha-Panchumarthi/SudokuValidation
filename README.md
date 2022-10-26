@@ -13,7 +13,7 @@ The strategy used for multithreading in this application is as follows:-
 through 9
 
 This would result in a total of 27 separate threads for validating a Sudoku puzzle solution.
-The python libraries used in this project are colorama, pyfiglet and threading.
+The python libraries used in this project are *colorama*, *pyfiglet* and *threading*.
 
 colorama and pyfiglet can be installed as follows:
 
