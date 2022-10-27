@@ -1,6 +1,6 @@
 # SudokuValidation
 A Sudoku puzzle uses a 9 × 9 grid in which each column and row, as well as
-each of the nine 3 × 3 subgrids, must contain all digits from 1 t 9 without repetition.
+each of the nine 3 × 3 subgrids, must contain all digits from 1 to 9 without repetition.
 It also checks whether all the numbers are in range.
 
 This project consists of designing a multithreaded application written in Python that determines whether the solution to
