@@ -12,9 +12,9 @@ def checkRow(board, row):
             if check[board[row][i]] is False:
                   check[board[row][i]] = True
             else:
-                  print(Fore.RED + f"Error in row {row}")
+                  print(Fore.RED + f"Error in row {row+1}")
                   return False
-    print(Fore.GREEN + f"Row {row} valid")
+    print(Fore.GREEN + f"Row {row+1} valid")
     return True
 
 def checkCol(board, col):
@@ -23,9 +23,9 @@ def checkCol(board, col):
             if check[board[i][col]] is False:
                   check[board[i][col]] = True
             else:
-                  print(Fore.RED + f"Error in column {col}")
+                  print(Fore.RED + f"Error in column {col+1}")
                   return False
-    print(Fore.GREEN + f"Column {col} valid")
+    print(Fore.GREEN + f"Column {col+1} valid")
     return True
 
 def printGrid(board, x, y):
@@ -83,7 +83,7 @@ if __name__ == "__main__":
              [3, 4, 5, 2, 8, 6, 1, 7, 9]]
     """
 
-    print("Enter board : ")
+    print("Enter board of 9 rows with 9 entries each: ")
     for i in range(9):
         print(f"Enter row {i+1}")   
         a = list(map(int, input().split()))
